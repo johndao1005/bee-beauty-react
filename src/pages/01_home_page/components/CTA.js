@@ -40,7 +40,7 @@ function CTA({ data, navigate }) {
                 {button.map(link => {
                     return (
                         <Button
-                        key={link?.text}
+                            key={link?.text}
                             onClick={() => navigate(link?.link)}
                             sx={{
                                 mx: 'auto',

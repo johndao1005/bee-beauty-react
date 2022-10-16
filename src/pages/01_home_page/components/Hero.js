@@ -70,6 +70,7 @@ function Hero({ data, navigate }) {
       </Grid>
     )
   }
+  
   /* --------------------------------- RENDER --------------------------------- */
   return (
     <Grid container direction="row" sx={{ py: 3, px: 3, backgroundColor: "#FEEDD9", minHeight: "190px" }}>
