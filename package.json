@@ -1,7 +1,7 @@
 {
   "name": "bee-beauty-frontend",
   "version": "0.1.0",
-  "homepage": "https://johndao1005.github.io/bee-beauty-react",
+  "homepage": "beee.beauty",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
