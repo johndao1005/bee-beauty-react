@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bee-beauty-react/static/css/main.860b30f0.css",
+    "main.js": "/bee-beauty-react/static/js/main.527cc863.js",
+    "static/js/787.dc8eee02.chunk.js": "/bee-beauty-react/static/js/787.dc8eee02.chunk.js",
+    "index.html": "/bee-beauty-react/index.html",
+    "main.860b30f0.css.map": "/bee-beauty-react/static/css/main.860b30f0.css.map",
+    "main.527cc863.js.map": "/bee-beauty-react/static/js/main.527cc863.js.map",
+    "787.dc8eee02.chunk.js.map": "/bee-beauty-react/static/js/787.dc8eee02.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.860b30f0.css",
+    "static/js/main.527cc863.js"
+  ]
+}
