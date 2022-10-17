@@ -1,10 +1,10 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { getStrapiMedia } from '../../../ultis/api'
 
-function Hero({ data, navigate }) {
-  const { button, picture, content } = data
+function Hero({ data }) {
+  const { picture, content, title } = data
   /* -------------------------------- COMPONENT ------------------------------- */
   const image = () => {
     if (!picture) {
@@ -26,12 +26,27 @@ function Hero({ data, navigate }) {
   }
 
   const description = () => {
-    if (!content || !button) {
+    if (!content || !title) {
       return <></>
     }
     return (
       <Grid item container xs={12} sm={6}
         alignContent="center" justifyContent='center' direction='column'  >
+          <Typography
+                  variant="h1"
+                  sx={{
+                    ml: 3,
+                    my: 3,
+                    fontSize: 34,
+                    fontFamily: 'monospace',
+                    fontWeight: 1000,
+                    letterSpacing: '.1rem',
+                    textDecoration: 'none',
+                    textAlign: 'center'
+                  }}
+                >
+                  {title}
+                </Typography>
         <Typography
           variant="h6"
           sx={{
@@ -48,29 +63,11 @@ function Hero({ data, navigate }) {
         >
           {content}
         </Typography>
-        <Button
-          onClick={() => navigate(button.link)}
-          sx={{
-            mx: 'auto',
-            px: 2,
-            color: 'black',
-            display: 'block',
-            fontSize: 11,
-            backgroundColor: '#F7D633',
-            letterSpacing: '.3rem',
-            "&:hover": {
-              backgroundColor: "black",
-              fontSize: 12,
-              color: '#F7D633',
-              cursor: 'pointer'
-            }
-          }}>
-          {button.text}
-        </Button>
+
       </Grid>
     )
   }
-  
+
   /* --------------------------------- RENDER --------------------------------- */
   return (
     <Grid container direction="row" sx={{ py: 3, px: 3, backgroundColor: "#FEEDD9", minHeight: "190px" }}>

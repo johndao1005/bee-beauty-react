@@ -12,7 +12,7 @@ export default function Homepage() {
     const [hero, setHero] = useState(model.hero)
     const [carousel, setCarousel] = useState(model.carousel)
     const [CTA, setCTA] = useState(model.CTA)
-
+    
    useEffect(() => {
     getData()
     return () => {
@@ -35,7 +35,8 @@ export default function Homepage() {
       },
     }).then((result) => {
       if (result != null) {
-        const {seo,CTA, carousel, hero} = result.data.attributes
+        
+        const {CTA, carousel, hero} = result.data.attributes
         setCTA(CTA)
         setCarousel(carousel)
         setHero(hero)

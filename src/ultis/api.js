@@ -7,7 +7,7 @@ import qs from "qs";
  */
 export function getStrapiURL(path = "") {
   return `${
-    process.env.REACT_APP_BACKEND_URL || "https://bee-beauty.herokuapp.com"
+    process.env.REACT_APP_BACKEND_URL || "http://bee-beauty.herokuapp.com"
   }${path}`;
 }
 
