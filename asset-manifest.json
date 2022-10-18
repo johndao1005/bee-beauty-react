@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/beee.beauty/static/css/main.860b30f0.css",
-    "main.js": "/beee.beauty/static/js/main.bc98cdf6.js",
+    "main.js": "/beee.beauty/static/js/main.fb086e1f.js",
     "static/js/787.dc8eee02.chunk.js": "/beee.beauty/static/js/787.dc8eee02.chunk.js",
     "index.html": "/beee.beauty/index.html",
     "main.860b30f0.css.map": "/beee.beauty/static/css/main.860b30f0.css.map",
-    "main.bc98cdf6.js.map": "/beee.beauty/static/js/main.bc98cdf6.js.map",
+    "main.fb086e1f.js.map": "/beee.beauty/static/js/main.fb086e1f.js.map",
     "787.dc8eee02.chunk.js.map": "/beee.beauty/static/js/787.dc8eee02.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.860b30f0.css",
-    "static/js/main.bc98cdf6.js"
+    "static/js/main.fb086e1f.js"
   ]
 }
