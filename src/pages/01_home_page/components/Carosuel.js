@@ -29,27 +29,32 @@ function Carosuel({ data }) {
                     stopAutoPlayOnHover
                     swipe
                     className="my-carousel"
-                    sx={{ my: 2, height: '350px' }}>
+                    sx={{ my: 2, height: '450px', }}>
 
                     {images.map((item, i) => {
                         return (
-                            <Box
+                            <Grid
                                 key={i}
-                                component="img"
-                                alt="picture"
-                                sx={{
-                                    width: '100%', mx: 'auto', height: '300px'
-                                }}
-                                src={getStrapiMedia(item)}
-                            />
+                                container
+                                justifyContent='center'
+                                alignContent='center'>
+                                <Box
+                                    component="img"
+                                    alt="picture"
+                                    sx={{
+                                        mx: 'auto', height: '400px',
+                                    }}
+                                    src={getStrapiMedia(item)}
+                                />
+                            </Grid>
                         )
                     })}
-
                 </Carousel>
                 <Grid
                     container
                     direction='row'
-                    justifyContent='center'>
+                    justifyContent='center'
+                    alignContent='center'>
                     {images.map((item, i) => (
                         <FiberManualRecordIcon
                             key={i}

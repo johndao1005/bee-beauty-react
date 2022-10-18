@@ -14,10 +14,10 @@ import { DatePicker } from "@mui/x-date-pickers";
 
 const defaultValues = {
     name: "",
-    age: 0,
-    gender: "",
-    os: "",
-    favoriteNumber: 0,
+    email: "",
+    date: "",
+    topic: "Consultant",
+    message: "",
 };
 
 const BookingPage = () => {
@@ -47,7 +47,7 @@ const BookingPage = () => {
     const form = () => {
         return (
             <form onSubmit={handleSubmit}>
-                <Grid lg={12} container alignItems="center" justifyContent="center" direction="column" rowGap={3}>
+                <Grid  container alignItems="center" justifyContent="center" direction="column" rowGap={3}>
                     <Typography
                         variant="h1"
                         sx={{
@@ -71,34 +71,25 @@ const BookingPage = () => {
                             name="name"
                             label="Name"
                             type="text"
-                            sx={{ display: 'flex', mb: 2, minWidth: '280px' }}
-                            value={formValues.name}
-                            onChange={handleInputChange}
-                        />
-                        <TextField
-                            id="name-input"
-                            name="name"
-                            label="Name"
-                            type="text"
-                            sx={{ display: 'flex', minWidth: '280px' }}
+                            sx={{ display: 'flex', mb: 2 ,minWidth: '280px', maxWidth: '600px'}}
                             value={formValues.name}
                             onChange={handleInputChange}
                         />
                     </FormControl>
                     <FormControl>
                         <FormLabel>Email</FormLabel>
+                        
                         <TextField
-                            id="name-input"
-                            name="name"
-                            label="Name"
-                            type="text"
+                            id="email-input"
+                            name="email"
+                            label="Email"
+                            type="email"
                             sx={{ display: 'flex', minWidth: '280px' }}
-                            value={formValues.name}
+                            value={formValues.email}
                             onChange={handleInputChange}
                         />
                     </FormControl>
                     <FormControl>
-                        {/* TODO change to datepicker */}
                         <FormLabel>Date</FormLabel>
                         <DatePicker
                             label="Basic example"
@@ -112,19 +103,19 @@ const BookingPage = () => {
                     <FormControl>
                         <FormLabel>Topic</FormLabel>
                         <Select
-                            name="os"
-                            value={formValues.os}
+                            name="topic"
+                            value={formValues.topic}
                             onChange={handleInputChange}
                             sx={{ display: 'flex', minWidth: '280px' }}
                         >
-                            <MenuItem key="mac" value="mac">
-                                Mac
+                            <MenuItem key="consultant" value="Consultant">
+                            Consultant
                             </MenuItem>
-                            <MenuItem key="windows" value="windows">
-                                Windows
+                            <MenuItem key="promotion" value="Promotion">
+                            Promotion
                             </MenuItem>
-                            <MenuItem key="linux " value="linux">
-                                Linux
+                            <MenuItem key="training " value="Training">
+                            Training
                             </MenuItem>
                         </Select>
                     </FormControl>
@@ -132,12 +123,14 @@ const BookingPage = () => {
                         {/* TODO make dragable for long text */}
                         <FormLabel>Message</FormLabel>
                         <TextField
-                            id="name-input"
-                            name="name"
-                            label="Name"
+                            id="message-input"
+                            name="message"
+                            label="Message"
                             type="text"
-                            sx={{ display: 'flex', minWidth: '280px' }}
-                            value={formValues.name}
+                            multiline
+                            rows={4}
+                            sx={{ display: 'flex', minWidth: '280px', height: '200%' }}
+                            value={formValues.message}
                             onChange={handleInputChange}
                         />
                     </FormControl>
@@ -164,7 +157,7 @@ const BookingPage = () => {
     }
     /* --------------------------------- RENDER --------------------------------- */
     return (
-        <Container maxWidth="xl" sx={{ my: 3 }}>
+        <Container maxWidth="xl" sx={{ my: 4 }}>
             {form()}
         </Container>
     );

@@ -18,7 +18,6 @@ export function getStrapiURL(path = "") {
  * @param {Object} options Options passed to fetch
  * @returns Parsed API call response
  */
-
 export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   // Merge default and user options
   const mergedOptions = {
@@ -54,5 +53,18 @@ export function getStrapiMedia(media) {
     url= media.data.attributes.url;
   }
   const imageUrl = url.startsWith("/") ? getStrapiURL(url) : url;
+  return imageUrl;
+}
+
+export function getStrapiMultipleMedia(media) {
+  let url = ""
+  const data = !media?.data ? media : media?.data
+  if(!data ){
+    throw new Error("can't load images")
+  }
+  const imageUrl = data.map( image =>{
+    url = image.attributes.url
+    return url.startsWith("/") ? getStrapiURL(url) : url
+  })
   return imageUrl;
 }

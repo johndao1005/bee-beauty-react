@@ -1,42 +1,67 @@
 import React from "react";
-import Card from './Card'
+import {
+  Badge,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  IconButton,
+  Typography
+} from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import { getStrapiMedia } from "../../../ultis/api";
 
-const Articles = ({articles}) => {
-    const leftArticlesCount = Math.ceil(articles.length / 5);
-    const leftArticles = articles.slice(0, leftArticlesCount);
-    const rightArticles = articles.slice(
-      leftArticlesCount,
-      articles.length
-    );
-  
+
+const Article = ({ data }) => {
+  const { description, image, title, like, createdAt } = data.attributes
+  const url = getStrapiMedia(image)
+  const date = createdAt.substring(0, 10)
+  const shortDescription = description.length > 50 ? `${description.substring(0,60)}...`:description
+  const likeNumber = () => {
+    if (!like || like === 0) {
+      return (
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+      )
+    }
+
     return (
-      <div>
-        <div className="uk-child-width-1-2" data-uk-grid>
-          <div>
-            {leftArticles.map((article) => {
-              return (
-                <Card
-                  article={article}
-                  key={`article__${article.attributes.slug}`}
-                />
-              );
-            })}
-          </div>
-          <div>
-            <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
-              {rightArticles.map((article) => {
-                return (
-                  <Card
-                    article={article}
-                    key={`article__${article.attributes.slug}`}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+      <IconButton aria-label="add to favorites">
+        <Badge badgeContent={like} color="error">
+          <FavoriteIcon />
+        </Badge>
+      </IconButton>
+    )
+  }
+
+  return (
+    <Card sx={{ margin: 5, minWidth: "320px", width: '90%' }}>
+      <CardHeader
+        title={title}
+        subheader={date}
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        src={url}
+        alt="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        {likeNumber()}
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
 };
 
-export default Articles;
+export default Article;
