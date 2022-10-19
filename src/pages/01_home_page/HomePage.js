@@ -8,11 +8,12 @@ import Hero from './components/Hero';
 import model from './model';
 
 export default function Homepage() {
+    //TODO update to murder
     const navigator = useNavigate()
     const [hero, setHero] = useState(model.hero)
     const [carousel, setCarousel] = useState(model.carousel)
     const [CTA, setCTA] = useState(model.CTA)
-    
+
    useEffect(() => {
     getData()
     return () => {
@@ -30,6 +31,9 @@ export default function Homepage() {
           populate: "*",
         },
         hero: {
+          populate: "*",
+        },
+        title: {
           populate: "*",
         }
       },

@@ -4,25 +4,25 @@ import {
   Box,
   Toolbar,
   IconButton,
-  Typography,
   Menu,
   Container,
   Button,
+  Grid,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
+import { getStrapiMedia } from '../ultis/api';
 
 const pages = [
   { name: 'Home', link: '/' },
   { name: 'About', link: '/about' },
   { name: 'Catologue', link: '/catologue' },
   { name: 'Blog', link: '/blog' },
-  { name: 'Booking', link: '/booking' },
+  // { name: 'Booking', link: '/booking' },
 ];
 
-export default function NavBar() {
+export default function NavBar({ logo }) {
   const navigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -32,35 +32,36 @@ export default function NavBar() {
 
   const handleCloseNavMenu = (link) => {
     setAnchorElNav(null);
-    navigate(link)
+    if (link) {
+      navigate(link)
+    }
   };
+  // console.log(logo)
+  const url = !logo ? "" : getStrapiMedia(logo)
 
-  const logo = (<>
-    <AdbIcon
-      sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1, color: '#F7D633' }} />
-    <Button
-      onClick={() => handleCloseNavMenu('/')}
-      sx={{
-        color: '#F7D633',
-        display: { xs: 'none', sm: 'block' },
-        fontFamily: 'monospace',
-        fontWeight: 800,
-        fontSize: 20,
-        letterSpacing: '.3rem',
-      }}
-    >
-      LOGO2
-    </Button>
-  </>)
+  const logoSection = () => {
+    return (
+      <Box
+        component="img"
+        alt="Hero picture"
+        sx={{
+          display: { xs: 'none', sm: 'flex' },
+          height: '60px', mx: 3
+        }}
+        src={url}
+        onClick={() => handleCloseNavMenu('/')}
+      />
+    )
+  }
 
   const bookingButton = (<>
     <Button
       onClick={() => handleCloseNavMenu('/booking')}
       sx={{
-        px: 2,
+        px: 5,
         color: '#232323',
         backgroundColor: '#F7D633',
-        display: { xs: 'none', sm: 'flex' },
+        // display: { xs: 'none', sm: 'flex' },
         "&:hover": {
           backgroundColor: "black",
           color: '#F7D633',
@@ -72,28 +73,22 @@ export default function NavBar() {
     </Button>
   </>)
 
-  const mobileLogo = (<>
-    <AdbIcon sx={{ display: { xs: 'flex', sm: 'none' }, mr: 1 ,color: '#F7D633'}} />
-    <Typography
-      variant="h5"
-      noWrap
-      component="a"
-      href=""
-      sx={{
-        mr: 2,
-        display: { xs: 'flex', sm: 'none' },
-        flexGrow: 1,
-        fontFamily: 'monospace',
-        fontWeight: 700,
-        letterSpacing: '.3rem',
-        color: 'inherit',
-        textDecoration: 'none',
-        color: '#F7D633'
-      }}
-    >
-      LOGO1
-    </Typography>
-  </>)
+  const mobileLogo = () => {
+    return (
+      <Grid container justifyContent='center'>
+        <Box
+          component="img"
+          alt="Hero picture"
+          sx={{
+            display: { xs: 'flex', sm: 'none' },
+            height: '60px',
+          }}
+          src={url}
+          onClick={() => handleCloseNavMenu('/')}
+        />
+      </Grid>
+    )
+  }
 
   const mobileNavLink = (<>
     <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, color: '#F7D633' }}>
@@ -127,7 +122,7 @@ export default function NavBar() {
       >
         {pages.map((page) => (
           <MenuItem key={page.name} onClick={() => handleCloseNavMenu(page.link)}>
-            <Typography textAlign="center">{page.name}</Typography>
+            <Button  sx={{ color: "#232323" }}>{page.name}</Button>
           </MenuItem>
         ))}
       </Menu>
@@ -137,15 +132,15 @@ export default function NavBar() {
   const navLink = (<>
     <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
       {pages.map((page) => {
-        if (page.name === 'Booking') {
-          return null;
-        }
+
         return (
           <Button
             key={page.name}
             onClick={() => handleCloseNavMenu(page.link)}
             sx={{
+              display: { xs: 'flex', sm: 'none' },
               my: 2,
+              mx: 1,
               color: '#F7D633',
               display: 'block',
             }}
@@ -164,15 +159,15 @@ export default function NavBar() {
         position="fixed"
         sx={{
           maxWidth: '2000px',
-          right: 'auto', 
-          alignItems: 'center', 
+          right: 'auto',
+          alignItems: 'center',
           backgroundColor: '#232323'
         }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {logo}
+            {logoSection()}
             {mobileNavLink}
-            {mobileLogo}
+            {mobileLogo()}
             {navLink}
             {bookingButton}
           </Toolbar>
@@ -183,34 +178,3 @@ export default function NavBar() {
   );
 }
 
-
-
-          // <Box sx={{ flexGrow: 0 }}>
-          //   <Tooltip title="Open settings">
-          //     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          //       <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-          //     </IconButton>
-          //   </Tooltip>
-          //   <Menu
-          //     sx={{ mt: '45px' }}
-          //     id="menu-appbar"
-          //     anchorEl={anchorElUser}
-          //     anchorOrigin={{
-          //       vertical: 'top',
-          //       horizontal: 'right',
-          //     }}
-          //     keepMounted
-          //     transformOrigin={{
-          //       vertical: 'top',
-          //       horizontal: 'right',
-          //     }}
-          //     open={Boolean(anchorElUser)}
-          //     onClose={handleCloseUserMenu}
-          //   >
-          //     {settings.map((setting) => (
-          //       <MenuItem key={setting} onClick={handleCloseUserMenu}>
-          //         <Typography textAlign="center">{setting}</Typography>
-          //       </MenuItem>
-          //     ))}
-          //   </Menu>
-          // </Box> 

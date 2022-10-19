@@ -63,7 +63,7 @@ export function getStrapiMultipleMedia(media) {
     throw new Error("can't load images")
   }
   const imageUrl = data.map( image =>{
-    url = image.attributes.url
+    url = image?.attributes?.url
     return url.startsWith("/") ? getStrapiURL(url) : url
   })
   return imageUrl;

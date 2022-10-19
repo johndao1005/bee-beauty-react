@@ -11,6 +11,7 @@ function Hero({ data }) {
       return <></>
     }
     const url = getStrapiMedia(picture)
+    
     return (
       <Grid xs={12} sm={6} item>
         <Box
@@ -63,7 +64,6 @@ function Hero({ data }) {
         >
           {content}
         </Typography>
-
       </Grid>
     )
   }

@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Box, Container } from '@mui/system';
 import React, { useState } from 'react'
 import Carousel from "react-material-ui-carousel";
@@ -20,6 +20,21 @@ function Carosuel({ data }) {
         }
         return (
             <Container maxWidth='sm'>
+                <Typography
+                  variant="h1"
+                  sx={{
+                    ml: 3,
+                    my: 3,
+                    fontSize: 34,
+                    fontFamily: 'monospace',
+                    fontWeight: 1000,
+                    letterSpacing: '.1rem',
+                    textDecoration: 'none',
+                    textAlign: 'center'
+                  }}
+                >
+                  A bit about me
+                </Typography>
                 <Carousel
                     index={index}
                     onChange={handleChange}

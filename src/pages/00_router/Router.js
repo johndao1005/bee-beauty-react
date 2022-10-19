@@ -11,11 +11,11 @@ import AboutPage from '../06_about_page/AboutPage'
 import BookingPage from '../07_booking_page/BookingPage'
 
 
-export default function Router({personalInfo}) {
+export default function Router({personalInfo, logo , footerLogo}) {
     //Can spit route later for authentication
     return (<>
         <BrowserRouter>
-            <NavBar />
+            <NavBar logo={logo} />
             <Routes>
                 <Route path="/" element={<Homepage />} exact={true} />
                 <Route path="/about" element={<AboutPage />} exact={true} />
@@ -28,8 +28,8 @@ export default function Router({personalInfo}) {
                 {/* Route guard */}
                 <Route path="*" element={<Navigate to="/404" />} />
                 <Route path="/404" element={<Homepage />} exact={true} />
-            </Routes>
-            <Footer personalInfo={personalInfo}/>
+            </Routes >
+            <Footer footerLogo={footerLogo} personalInfo={personalInfo}/>
         </BrowserRouter>
     </>
     )

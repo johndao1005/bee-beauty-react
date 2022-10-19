@@ -12,12 +12,12 @@ function CTA({ data, navigate }) {
             <Grid item xs={7} md={8} container alignContent="center" justifyContent='center'>
                 <Typography
                     variant="h6"
-                    component="a"
                     href="/"
                     sx={{
                         mb: 1,
-                        fontSize: 15,
-                        fontFamily: 'monospace',
+                        ml: 7,
+                        fontSize: 25,
+                        fontFamily: 'Satisfy',
                         fontWeight: 300,
                         letterSpacing: '.1rem',
                         color: 'inherit',
@@ -51,6 +51,7 @@ function CTA({ data, navigate }) {
                                 backgroundColor: "#F7D633",
                                 color: '#141414',
                                 letterSpacing: '.3rem',
+                                fontFamily: 'Pacifico',
                                 "&:hover": {
                                     backgroundColor: '#141414',
                                     fontSize: 13,

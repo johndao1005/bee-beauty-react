@@ -1,13 +1,26 @@
-import {createTheme} from '@mui/system'
+import { createTheme, responsiveFontSizes  } from '@mui/material/styles'
 
-const theme = createTheme({
-    palette:{
-        background:{
-            paper: '#fff'
+let theme = createTheme({
+    palette: {
+        primary: {
+            main: '#F7D633',
         },
-        text:{
-            primary: '#fff',
+        secondary: {
+            main: '#232323',
         },
-    }
-})
-export default theme;
+    },
+    typography: {
+        fontFamily: [
+            "Satisfy",
+            "Pacifico",
+            'sans-serif',
+            '-apple-system',
+        ].join(','),
+        button : {
+            fontFamily: "Pacifico",
+            
+        }
+    },
+});
+// theme = responsiveFontSizes(theme)
+export default theme = responsiveFontSizes(theme);

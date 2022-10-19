@@ -6,11 +6,13 @@ import { fetchAPI, getStrapiMedia } from './ultis/api'
 // import { Dayjs } from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { ThemeProvider } from '@mui/system';
-// import theme from './theme'
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme'
 
 function App() {
   const [siteName, setSiteName] = useState('Bee-Beauty')
+  const [logoLink, setLogoLink] = useState('')
+  const [footerLogo, setFooterLogo] = useState('')
   const [favicon, setFavicon] = useState('')
   const [defaultSeo, setDefaultSeo] = useState(null)
   const [personalInfo, setPersonalInfo] = useState(null)
@@ -28,15 +30,20 @@ function App() {
         defaultSeo: {
           populate: "*",
         },
-        personal: "*"
+        personal: "*",
+        logo: "*",
+        logo2: "*",
       },
     }).then((result) => {
       if (result != null) {
-        const { siteName, favicon, defaultSeo, personal } = result?.data?.attributes
+        const { siteName, favicon, defaultSeo, personal, logo, logo2 } = result?.data?.attributes
+        // update to global context or using model
         setSiteName(siteName)
         setDefaultSeo(defaultSeo)
         setFavicon(getStrapiMedia(favicon))
         setPersonalInfo(personal)
+        setLogoLink(logo)
+        setFooterLogo(logo2)
       } else {
         throw new Error("cant connect")
       }
@@ -48,11 +55,11 @@ function App() {
   return (
     <>
       <HelmetProvider>
-        {/* <ThemeProvider theme={theme}> */}
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Router personalInfo={personalInfo} />
-        </LocalizationProvider>
-        {/* </ThemeProvider> */}
+        <ThemeProvider theme={theme}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Router personalInfo={personalInfo} logo={logoLink} footerLogo={footerLogo} />
+          </LocalizationProvider>
+        </ThemeProvider>
         <Helmet
           defaultTitle="Bee Beauty">
           <html lang="en" amp />

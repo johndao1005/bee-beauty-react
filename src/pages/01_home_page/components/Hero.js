@@ -4,7 +4,7 @@ import React from 'react'
 import { getStrapiMedia } from '../../../ultis/api'
 
 function Hero({ data, navigate }) {
-  const { button, picture, content } = data
+  const { button, picture, content, title } = data
   /* -------------------------------- COMPONENT ------------------------------- */
   const image = () => {
     if (!picture) {
@@ -32,6 +32,21 @@ function Hero({ data, navigate }) {
     return (
       <Grid item container xs={12} sm={6}
         alignContent="center" justifyContent='center' direction='column'  >
+            <Typography
+                  variant="h1"
+                  sx={{
+                    ml: 3,
+                    my: 3,
+                    fontSize: 34,
+                    fontFamily: 'monospace',
+                    fontWeight: 1000,
+                    letterSpacing: '.1rem',
+                    textDecoration: 'none',
+                    textAlign: 'center'
+                  }}
+                >
+                  {title}
+                </Typography>
         <Typography
           variant="h6"
           sx={{

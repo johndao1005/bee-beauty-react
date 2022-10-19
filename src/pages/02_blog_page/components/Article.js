@@ -16,6 +16,7 @@ import { getStrapiMedia } from "../../../ultis/api";
 
 const Article = ({ data }) => {
   const { description, image, title, like, createdAt } = data.attributes
+  console.log(image)
   const url = getStrapiMedia(image)
   const date = createdAt.substring(0, 10)
   const shortDescription = description.length > 50 ? `${description.substring(0,60)}...`:description

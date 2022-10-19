@@ -6,21 +6,19 @@ function Item({ data }) {
   const { brand, description, image, name } = data?.attributes
   //get the first image
   const url = getStrapiMultipleMedia(image)[0]
-  console.log(brand)
-  const itemBrand = !brand?.data ? "" : brand?.data.attributes.name
   return (
     <Card sx={{ margin: 5, minWidth: "320px", width: '90%' }}>
       <CardMedia
         component="img"
         src={url}
         alt="Paella dish"
+        sx={{ height: '70%', width: '60%', margin: "0px auto" }}
       />
       <CardHeader
         title={name}
-        subheader={itemBrand}
       />
       <CardContent>
-        <Typography >
+        <Typography  >
           {description}
         </Typography>
       </CardContent>
