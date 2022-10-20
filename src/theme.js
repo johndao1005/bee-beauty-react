@@ -34,6 +34,13 @@ let theme = createTheme({
             letterSpacing: '.1rem',
             color: '#F7D633',
         },
+        subTitle :{
+            fontSize: 30,
+            fontFamily: 'Pacifico',
+            fontWeight: 200,
+            letterSpacing: '.1rem',
+            color: '#F7D633',
+        },
         content :{
             fontSize: 22,
             fontWeight: 300,
@@ -41,7 +48,13 @@ let theme = createTheme({
             letterSpacing: '.1rem',
             textAlign: 'center'
         },
-        
+        header :{
+            fontSize: 40,
+            fontFamily: 'Pacifico',
+            fontWeight: 200,
+            letterSpacing: '.2rem',
+            color: '#F7D633',
+        },
     },
 });
 // theme = responsiveFontSizes(theme)

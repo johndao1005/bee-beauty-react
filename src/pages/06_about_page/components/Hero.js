@@ -11,14 +11,14 @@ function Hero({ data }) {
       return <></>
     }
     const url = getStrapiMedia(picture)
-    
+
     return (
       <Grid xs={12} sm={6} item>
         <Box
           component="img"
           alt="Hero picture"
           sx={{
-            minWidth: '250px', mx: 'auto', my: '50px', width: '100%'
+            minWidth: '250px', my: '50px', width: '100%', maxWidth: "550px", px: 2
           }}
           src={url}
         />
@@ -33,33 +33,22 @@ function Hero({ data }) {
     return (
       <Grid item container xs={12} sm={6}
         alignContent="center" justifyContent='center' direction='column'  >
-          <Typography
-                  variant="h1"
-                  sx={{
-                    ml: 3,
-                    my: 3,
-                    fontSize: 34,
-                    fontFamily: 'monospace',
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    textDecoration: 'none',
-                    textAlign: 'center'
-                  }}
-                >
-                  {title}
-                </Typography>
         <Typography
-          variant="h6"
+          color='#232323'
+          variant="title"
+          align='center'
+          sx={{
+            ml: 3,
+            my: 3,
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="content"
           sx={{
             ml: 3,
             mb: 3,
-            fontSize: 15,
-            fontFamily: 'monospace',
-            fontWeight: 300,
-            letterSpacing: '.1rem',
-            color: 'inherit',
-            textDecoration: 'none',
-            textAlign: 'center'
           }}
         >
           {content}
@@ -70,7 +59,7 @@ function Hero({ data }) {
 
   /* --------------------------------- RENDER --------------------------------- */
   return (
-    <Grid container direction="row" sx={{ py: 3, px: 3, backgroundColor: "#FEEDD9", minHeight: "190px" }}>
+    <Grid container direction="row" sx={{ pt: 1, px: 2, backgroundColor: "#FEEDD9", minHeight: "190px" }}>
       {image()}
       {description()}
     </Grid>

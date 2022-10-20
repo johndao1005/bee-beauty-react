@@ -22,41 +22,29 @@ function ShowCase({ data }) {
                   alt='picture'
                   src={getStrapiMedia(skill.picture)}
                   sx={{
-                    minWidth: '240px', my: '50px', width: '80%'
+                    minWidth: '240px', my: 1, width: "100%"
                   }}
                 />
               </Grid>
               <Grid item container xs={12} sm={6}
                 alignContent="center" justifyContent='center' direction='column'  >
                 <Typography
-                  variant="h1"
+                  variant="subTitle"
+                  align="center"
+                  color="secondary"
                   sx={{
-                    ml: 3,
-                    mb: 3,
-                    fontSize: 50,
-                    fontFamily: 'monospace',
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
+                    pb: 1,
                     textAlign: 'center'
                   }}
                 >
                   {skill.title}
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="content"
                   sx={{
-                    ml: 3,
-                    mb: 3,
-                    px: 5,
-                    fontSize: 15,
-                    fontFamily: 'monospace',
-                    fontWeight: 300,
-                    letterSpacing: '.1rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    textAlign: 'center'
+                    px: 1,
+                    pb: 1,
+                    ml: 4
                   }}
                 >
                   {skill.content}
@@ -71,21 +59,20 @@ function ShowCase({ data }) {
   }
   return (
     <>
-      <Typography
-        variant="h1"
-        sx={{
-          ml: 3,
-          my: 3,
-          fontSize: 34,
-          fontFamily: 'monospace',
-          fontWeight: 1000,
-          letterSpacing: '.1rem',
-          textDecoration: 'none',
-          textAlign: 'center'
-        }}
-      >
-        Hobby
-      </Typography>
+      <Grid container alignContent="center" justifyContent="center" sx={{ width: "100%", pt: 2 }}>
+        <Typography
+          variant="header"
+          color="primary"
+          align="center"
+          sx={{
+            ml: 3,
+            mb: 3,
+            pt: 2,
+            color: "#232323"
+          }}
+          children={"Hobbies"}
+        />
+      </Grid>
       {description()}
     </>
   )
