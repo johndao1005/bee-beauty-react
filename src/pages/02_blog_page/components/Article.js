@@ -19,7 +19,7 @@ const Article = ({ data }) => {
   console.log(image)
   const url = getStrapiMedia(image)
   const date = createdAt.substring(0, 10)
-  const shortDescription = description.length > 50 ? `${description.substring(0,60)}...`:description
+  // const shortDescription = description.length > 50 ? `${description.substring(0,60)}...`:description
   const likeNumber = () => {
     if (!like || like === 0) {
       return (
@@ -39,7 +39,7 @@ const Article = ({ data }) => {
   }
 
   return (
-    <Card sx={{ margin: 5, minWidth: "320px", width: '90%' }}>
+    <Card raised sx={{ margin: 5, minWidth: "320px", width: '90%' }}>
       <CardHeader
         title={title}
         subheader={date}

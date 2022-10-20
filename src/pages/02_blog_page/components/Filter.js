@@ -4,19 +4,14 @@ import React from 'react'
 function Filter(props) {
   const { filter, handleFilterChange, } = props
   return (
-    <Container maxWidth='lg'>
+    <Grid container justifyContent="center">
       <Typography
-        variant="h1"
+        variant="header"
+        align="center"
+        color="secondary"
         sx={{
-          ml: 3,
           my: 3,
-          fontSize: 50,
-          fontFamily: 'monospace',
-          fontWeight: 1000,
-          letterSpacing: '.1rem',
-          color: 'inherit',
-          textDecoration: 'none',
-          textAlign: 'center'
+          width: "100%"
         }}
       >
         Blog
@@ -62,7 +57,7 @@ function Filter(props) {
         </FormControl>
       </Grid>
      
-    </Container>
+    </Grid>
   )
 }
 

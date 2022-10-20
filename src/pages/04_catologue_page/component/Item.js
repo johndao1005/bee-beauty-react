@@ -7,7 +7,7 @@ function Item({ data }) {
   //get the first image
   const url = getStrapiMultipleMedia(image)[0]
   return (
-    <Card sx={{ margin: 5, minWidth: "320px", width: '90%' }}>
+    <Card raised sx={{ margin: 5, minWidth: "320px", width: '90%',py: 2 }}>
       <CardMedia
         component="img"
         src={url}
@@ -18,7 +18,7 @@ function Item({ data }) {
         title={name}
       />
       <CardContent>
-        <Typography  >
+        <Typography >
           {description}
         </Typography>
       </CardContent>

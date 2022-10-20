@@ -15,18 +15,13 @@ export default function DisplaySection({ title, description, data }) {
     const titleSection = () => {
         return (
             <Typography
-                variant="h1"
+                variant="header"
+                color="secondary"
+                align="center"
                 sx={{
                     ml: 3,
                     my: 3,
                     mt: 5,
-                    fontSize: 50,
-                    fontFamily: 'monospace',
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    textAlign: 'center'
                 }}
             >
                 {title}
@@ -37,18 +32,13 @@ export default function DisplaySection({ title, description, data }) {
     const descriptionSection = () => {
         return (
             <Typography
-                variant="h6"
+                variant="content"
+                color="secondary"
+                align="center"
                 sx={{
                     ml: 3,
                     mb: 3,
                     px: 5,
-                    fontSize: 15,
-                    fontFamily: 'monospace',
-                    fontWeight: 300,
-                    letterSpacing: '.1rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    textAlign: 'center'
                 }}
             >
                 {description}
