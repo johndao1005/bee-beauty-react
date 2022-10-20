@@ -18,8 +18,30 @@ let theme = createTheme({
         ].join(','),
         button : {
             fontFamily: "Pacifico",
-            
-        }
+        },
+        h4 :{
+            fontSize: 22,
+            fontFamily: 'Pacifico',
+            fontWeight: 200,
+            letterSpacing: '.1rem',
+            color: '#F7D633',
+            textDecoration: 'none',
+        }, 
+        title :{
+            fontSize: 35,
+            fontFamily: 'Pacifico',
+            fontWeight: 200,
+            letterSpacing: '.1rem',
+            color: '#F7D633',
+        },
+        content :{
+            fontSize: 22,
+            fontWeight: 300,
+            fontFamily: 'Satisfy',
+            letterSpacing: '.1rem',
+            textAlign: 'center'
+        },
+        
     },
 });
 // theme = responsiveFontSizes(theme)

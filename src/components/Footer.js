@@ -105,18 +105,15 @@ export default function Footer({ personalInfo, footerLogo }) {
 
   const firstColumn = () => {
     return (
-      <Grid item md={3} sm={0}
-        justifyContent="center"
-        sx={{ my: 'auto', mx: 'auto', display: { xs: 'none', sm: 'flex' } }}>
-        <Box
-          component="img"
-          alt="Hero picture"
-          sx={{
-            height: '150px', mx: 'auto',
-          }}
-          src={url}
-        />
-      </Grid>
+      <Box
+        component="img"
+        alt="Hero picture"
+        sx={{
+          height: '150px', ml: 1,
+          display: { lg: 'flex', md: 'block', sm: 'none', xs: 'none' },
+        }}
+        src={url}
+      />
     )
   }
 
@@ -126,61 +123,32 @@ export default function Footer({ personalInfo, footerLogo }) {
     }
     const { address, email, phone } = personalInfo
     return (
-      <Grid item xs={12} md={3} sm={6}
-        container spacing={3}
+      <Grid item xs={12} md={5} sm={4}
+        container
         direction="column"
         justifyContent="start"
-        sx={{ my: 2, }}>
+        rowGap={2}
+        sx={{ my: 1, pr: 1, mb: 3,mr: { sm: 3, md: 0 } }}>
         <Typography
-          variant="h6"
+          variant="h4"
           component="a"
-          sx={{
-            ml: 5,
-            mb: 1,
-            fontSize: 15,
-            fontFamily: 'monospace',
-            fontWeight: 300,
-            letterSpacing: '.1rem',
-            color: '#F7D633',
-            textDecoration: 'none',
-            lineHeight: "1.3rem"
-          }}
+          align='center'
           href={`tel:${phone}`}
         >
           Phone: {phone}
         </Typography>
         <Typography
-          variant="h6"
+          variant="h4"
           component="a"
-          sx={{
-            ml: 5,
-            mb: 1,
-            fontSize: 15,
-            fontFamily: 'monospace',
-            fontWeight: 300,
-            letterSpacing: '.1rem',
-            color: '#F7D633',
-            textDecoration: 'none',
-            lineHeight: "1.3rem"
-          }}
+          align='center'
           href={`mailto:${email}`}
         >
-          Email:{email}
+          Email: {email}
         </Typography>
         <Typography
-          variant="h6"
+          variant="h4"
           component="a"
-          sx={{
-            ml: 5,
-            mb: 1,
-            fontSize: 15,
-            fontFamily: 'monospace',
-            fontWeight: 300,
-            letterSpacing: '.1rem',
-            color: '#F7D633',
-            textDecoration: 'none',
-            lineHeight: "1.3rem"
-          }}
+          align='center'
         >
           Address: {address}
         </Typography>
@@ -190,8 +158,8 @@ export default function Footer({ personalInfo, footerLogo }) {
 
   const thirdColumn = () => {
     return (
-      <Grid item md={2} xs={6}
-        container spacing={2}
+      <Grid item md={2} xs={5} sm={3}
+        container
         direction="column"
         justifyContent="center" >
         {pages.map((page) => {
@@ -205,8 +173,8 @@ export default function Footer({ personalInfo, footerLogo }) {
 
   const fourthColumn = () => {
     return (
-      <Grid item xs={6} md={2}
-        container spacing={2}
+      <Grid item xs={5} md={2} sm={2}
+        container
         direction="column"
         justifyContent="center" >
         {pages.map((page) => {
@@ -220,7 +188,7 @@ export default function Footer({ personalInfo, footerLogo }) {
 
   const topSection = (
     <Container maxWidth="xl" sx={{ backgroundColor: '#232323', color: 'white', display: 'block', pt: 4, pb: 3 }}>
-      <Grid container spacing={3}
+      <Grid container columnGap={2}
         direction="row">
         {firstColumn()}
         {secondColumn()}
@@ -256,7 +224,7 @@ export default function Footer({ personalInfo, footerLogo }) {
           variant="h6"
           sx={{
             mb: 1,
-            fontSize: 15,
+            fontSize: 13,
             fontFamily: 'monospace',
             fontWeight: 300,
             letterSpacing: '.1rem',

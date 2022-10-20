@@ -19,22 +19,18 @@ function Carosuel({ data }) {
             return <></>
         }
         return (
-            <Container maxWidth='sm'>
-                <Typography
-                  variant="h1"
-                  sx={{
-                    ml: 3,
-                    my: 3,
-                    fontSize: 34,
-                    fontFamily: 'monospace',
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    textDecoration: 'none',
-                    textAlign: 'center'
-                  }}
-                >
-                  A bit about me
-                </Typography>
+            <Container maxWidth='md'>
+                <Grid container justifyContent='center'>
+
+                    <Typography
+                        variant="title"
+                        sx={{
+                            ml: 3,
+                        }}
+                    >
+                        A bit about me
+                    </Typography>
+                </Grid>
                 <Carousel
                     index={index}
                     onChange={handleChange}
@@ -44,7 +40,7 @@ function Carosuel({ data }) {
                     stopAutoPlayOnHover
                     swipe
                     className="my-carousel"
-                    sx={{ my: 2, height: '450px', }}>
+                    sx={{ mt: 2, height: '420px', }}>
 
                     {images.map((item, i) => {
                         return (
@@ -83,7 +79,7 @@ function Carosuel({ data }) {
     }
 
     return (
-        <Container maxWidth="xl" sx={{ backgroundColor: 'black', color: '#FEEDD9', display: 'block', pt: 3, pb: 2 }}>
+        <Container maxWidth="xl" sx={{ backgroundColor: 'black', color: '#FEEDD9', display: 'block', }}>
             <Grid sx={{ py: 2 }} alignContent='center' justifyContent='center' container direction='column'>
                 {carousel()}
             </Grid>
