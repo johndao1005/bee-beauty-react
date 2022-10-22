@@ -50,9 +50,9 @@ export default function DisplaySection({ title, description, data }) {
         <>
             {titleSection()}
             {descriptionSection()}
-            <Grid container direction="row" alignContent='center' justifyContent='center' rowGap={3}>
+            <Grid container direction="row" alignContent='center' justifyContent='center' rowGap={2}>
                 {/* <Filter handleFilterChange={handleFilterChange} filter={filter} /> */}
-                <ItemList data={data} />
+                <ItemList itemType={title} data={data} />
             </Grid>
         </>
     )

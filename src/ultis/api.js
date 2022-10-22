@@ -47,7 +47,7 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 
 export function getStrapiMedia(media) {
   let url = ""
-  if(!media.data){
+  if(!media?.data){
     url = media.attributes.url
   }else{
     url= media.data.attributes.url;

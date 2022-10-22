@@ -51,7 +51,7 @@ function CTA({ data, navigate }) {
                                 backgroundColor: "#F7D633",
                                 color: '#141414',
                                 letterSpacing: '.3rem',
-                                fontFamily: 'Pacifico',
+                                fontFamily: 'Urbanist',
                                 "&:hover": {
                                     backgroundColor: '#141414',
                                     fontSize: 13,

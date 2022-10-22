@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Filter from './components/Filter';
 import ArticleList from './components/ArticleList';
 import { fetchAPI } from '../../ultis/api';
+import { Container } from '@mui/material';
 
 
 export default function BlogPage() {
@@ -20,9 +21,8 @@ export default function BlogPage() {
       populate: '*'
     }).then(result => {
       if (result != null) {
-        console.log(result)
+        setArticles(result)
       }
-      setArticles(result)
     }).catch(e => {
       throw new Error(e)
     })
@@ -39,13 +39,13 @@ export default function BlogPage() {
   }
 
   return (
-    <>
+    <Container sx={{ my: 4 }}>
       <Filter
         filter={filter}
         handleFilterChange={handleFilterChange}
         sort={sort}
         handleSortChange={handleSortChange} />
       <ArticleList data={articles} />
-    </>
+    </Container>
   )
 }

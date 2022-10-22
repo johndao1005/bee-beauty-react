@@ -11,17 +11,18 @@ let theme = createTheme({
     },
     typography: {
         fontFamily: [
-            "Satisfy",
-            "Pacifico",
+            "Urbanist",
+            "Gotu",
             'sans-serif',
             '-apple-system',
         ].join(','),
+        fontSize: 17,
         button : {
-            fontFamily: "Pacifico",
+            fontFamily: "Urbanist",
         },
         h4 :{
             fontSize: 22,
-            fontFamily: 'Pacifico',
+            fontFamily: 'Urbanist',
             fontWeight: 200,
             letterSpacing: '.1rem',
             color: '#F7D633',
@@ -29,28 +30,28 @@ let theme = createTheme({
         }, 
         title :{
             fontSize: 35,
-            fontFamily: 'Pacifico',
+            fontFamily: 'Gotu',
             fontWeight: 200,
             letterSpacing: '.1rem',
             color: '#F7D633',
         },
         subTitle :{
             fontSize: 30,
-            fontFamily: 'Pacifico',
+            fontFamily: 'Gotu',
             fontWeight: 200,
             letterSpacing: '.1rem',
             color: '#F7D633',
         },
         content :{
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: 300,
-            fontFamily: 'Satisfy',
+            fontFamily: 'Gotu',
             letterSpacing: '.1rem',
             textAlign: 'center'
         },
         header :{
             fontSize: 40,
-            fontFamily: 'Pacifico',
+            fontFamily: 'Urbanist',
             fontWeight: 200,
             letterSpacing: '.2rem',
             color: '#F7D633',
