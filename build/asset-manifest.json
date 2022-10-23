@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/beee.beauty/static/css/main.860b30f0.css",
-    "main.js": "/beee.beauty/static/js/main.fb086e1f.js",
+    "main.css": "/beee.beauty/static/css/main.8970cfb3.css",
+    "main.js": "/beee.beauty/static/js/main.0c64147a.js",
     "static/js/787.dc8eee02.chunk.js": "/beee.beauty/static/js/787.dc8eee02.chunk.js",
+    "static/media/Gotu-Regular.ttf": "/beee.beauty/static/media/Gotu-Regular.90551c23e142c45aa552.ttf",
+    "static/media/Urbanist-VariableFont_wght.ttf": "/beee.beauty/static/media/Urbanist-VariableFont_wght.96da0221578c1868bd1e.ttf",
     "index.html": "/beee.beauty/index.html",
-    "main.860b30f0.css.map": "/beee.beauty/static/css/main.860b30f0.css.map",
-    "main.fb086e1f.js.map": "/beee.beauty/static/js/main.fb086e1f.js.map",
+    "main.8970cfb3.css.map": "/beee.beauty/static/css/main.8970cfb3.css.map",
+    "main.0c64147a.js.map": "/beee.beauty/static/js/main.0c64147a.js.map",
     "787.dc8eee02.chunk.js.map": "/beee.beauty/static/js/787.dc8eee02.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.860b30f0.css",
-    "static/js/main.fb086e1f.js"
+    "static/css/main.8970cfb3.css",
+    "static/js/main.0c64147a.js"
   ]
 }
