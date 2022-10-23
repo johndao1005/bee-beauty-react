@@ -24,8 +24,8 @@ export default function Router({personalInfo, logo , footerLogo}) {
                 <Route path="/blog" element={<BlogPage />} exact={true} />
                 <Route path="/article/:id" element={<PostPage />} exact={true} />
                 <Route path="/catologue" element={<CatologuePage />} exact={true} />
-                <Route path="/service/:id" element={<ItemPage />} exact={true} />
-                <Route path="/product/:id" element={<ItemPage />} exact={true} />
+                <Route path="/services/:id" element={<ItemPage />} exact={true} />
+                <Route path="/products/:id" element={<ItemPage />} exact={true} />
                 {/* Route guard */}
                 <Route path="*" element={<Navigate to="/404" />} />
                 <Route path="/404" element={<Homepage />} exact={true} />

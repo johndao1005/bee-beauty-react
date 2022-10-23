@@ -11,7 +11,7 @@ export default function ItemList({ data, itemType }) {
     }
 
     const handleClick = (item, i) => {
-        navigate(`/${itemType.toLowerCase()}/${i}`, { state:  item })
+        navigate(`/${itemType.toLowerCase()}s/${+i+1}`, { state:  item })
     }
 
     return (

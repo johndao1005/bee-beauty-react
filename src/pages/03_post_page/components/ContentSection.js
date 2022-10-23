@@ -1,5 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { getStrapiMedia } from '../../../ultis/api'
 
 function ContentSection({ articleDetails }) {
@@ -29,13 +31,19 @@ function ContentSection({ articleDetails }) {
             </Grid>
             {/* TODO look into react markdown  https://stackoverflow.com/questions/57050107/converting-markdown-text-into-react-components */}
             <Grid container item justifyContent="left" direction="row">
+
                 <Typography
                     variant="content"
                     align='left'
+
+                    fontSize={14}
                     sx={{
                         my: 3,
+                        width: "100%"
                     }}>
-                    {articleDetails.content}
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} disallowedElements={['img', "iframe"]} >
+                        {articleDetails.content}
+                    </ReactMarkdown>
                 </Typography>
             </Grid>
         </>

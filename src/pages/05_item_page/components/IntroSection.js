@@ -1,9 +1,26 @@
 import { Typography } from '@mui/material'
 import React from 'react'
 
-function IntroSection({articleDetails}) {
-    const date = articleDetails?.createdAt?.substring(0, 10)
-    const authorDetails = articleDetails?.author?.data?.attributes
+function IntroSection({item}) {
+    const date = item?.createdAt?.substring(0, 10)
+    const brandDetails = item?.brand?.data?.attributes
+    const brand = () =>{
+      if (!brandDetails) {
+        return <></>
+      }
+      else {
+        return (
+          <Typography
+          variant="subTitle"
+          color="secondary"
+          sx={{
+            my: 1,
+          }}>
+          Brand: {brandDetails.name}
+        </Typography>
+        )
+      }
+    }
     return (
       <>
         <Typography
@@ -12,23 +29,16 @@ function IntroSection({articleDetails}) {
           sx={{
             mt: 3,
           }}>
-          {articleDetails.title}
+          {item.name}
         </Typography>
-        <Typography
-          variant="subTitle"
-          color="secondary"
-          sx={{
-            my: 1,
-          }}>
-          By: {authorDetails.name}
-        </Typography>
+        {brand()}
         <Typography
           variant="h4"
           color="secondary"
           sx={{
             my: 1,
           }}>
-          {date}
+          Posted: {date}
         </Typography>
       </>
   )

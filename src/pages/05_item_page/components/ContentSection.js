@@ -1,21 +1,24 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { getStrapiMedia } from '../../../ultis/api'
 
-function ContentSection({ articleDetails }) {
+function ContentSection({ item }) {
 
     const image = () => {
-        const imageDetails = articleDetails?.image?.data
+        const imageDetails = item?.image?.data[0]
         if (!imageDetails || imageDetails === "") {
             return <></>
         }
         const url = getStrapiMedia(imageDetails)
+        console.log(imageDetails)
         return (
             <Box
                 component="img"
                 alt={"blog image"}
                 sx={{
-                    minWidth: '250px', my: 2, mx: 3, width: "80%"
+                    minWidth: '250px', my: 2, mx: 3, width: "70%"
                 }}
                 src={url}
             />
@@ -31,11 +34,14 @@ function ContentSection({ articleDetails }) {
             {/* TODO look into react markdown  https://stackoverflow.com/questions/57050107/converting-markdown-text-into-react-components */}
             <Typography
                 variant="content"
+                align='left'
                 sx={{
-                    mb: 3,
+                    my: 3,
                 }}
             >
-                {articleDetails.content}
+                <ReactMarkdown remarkPlugins={[remarkGfm]} disallowedElements={['img', "iframe"]} >
+                    {item.content}
+                </ReactMarkdown>
             </Typography>
         </>
     )

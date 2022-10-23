@@ -11,19 +11,18 @@ import model from './model';
 function PostPage() {
   const [articleDetails, setArticleDetails] = useState(model)
   const { state, pathname } = useLocation();
-
   useEffect(() => {
     getData()
-
     return () => {
-
     }
   }, [])
 
   const getData = async () => {
     if (!state) {
       const id = +pathname.slice(-1)
-      await fetchAPI(`/articles/${id + 1}`).then(data => {
+      await fetchAPI(`/articles/${id + 1}`,{
+        populate: '*'
+      }).then(data => {
         const article = data?.data.attributes
         setArticleDetails({ ...article })
       })
