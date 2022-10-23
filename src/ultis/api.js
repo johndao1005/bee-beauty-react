@@ -7,7 +7,7 @@ import qs from "qs";
  */
 export function getStrapiURL(path = "") {
   return `${
-    process.env.REACT_APP_BACKEND_URL || "https://seahorse-app-9lewb.ondigitalocean.app/"
+    process.env.REACT_APP_BACKEND_URL || "https://seahorse-app-9lewb.ondigitalocean.app"
   }${path}`;
 }
 
