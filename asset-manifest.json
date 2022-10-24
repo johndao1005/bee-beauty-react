@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bee-beauty/static/css/main.4672d6f6.css",
-    "main.js": "/bee-beauty/static/js/main.093f8d8c.js",
-    "static/js/787.dc8eee02.chunk.js": "/bee-beauty/static/js/787.dc8eee02.chunk.js",
-    "static/media/Gotu-Regular.ttf": "/bee-beauty/static/media/Gotu-Regular.90551c23e142c45aa552.ttf",
-    "static/media/Urbanist-VariableFont_wght.ttf": "/bee-beauty/static/media/Urbanist-VariableFont_wght.96da0221578c1868bd1e.ttf",
-    "index.html": "/bee-beauty/index.html",
-    "main.4672d6f6.css.map": "/bee-beauty/static/css/main.4672d6f6.css.map",
-    "main.093f8d8c.js.map": "/bee-beauty/static/js/main.093f8d8c.js.map",
-    "787.dc8eee02.chunk.js.map": "/bee-beauty/static/js/787.dc8eee02.chunk.js.map"
+    "main.css": "/bee-beauty-react/static/css/main.dd249bf1.css",
+    "main.js": "/bee-beauty-react/static/js/main.00d0d782.js",
+    "static/js/787.dc8eee02.chunk.js": "/bee-beauty-react/static/js/787.dc8eee02.chunk.js",
+    "static/media/Gotu-Regular.ttf": "/bee-beauty-react/static/media/Gotu-Regular.90551c23e142c45aa552.ttf",
+    "static/media/Urbanist-VariableFont_wght.ttf": "/bee-beauty-react/static/media/Urbanist-VariableFont_wght.96da0221578c1868bd1e.ttf",
+    "index.html": "/bee-beauty-react/index.html",
+    "main.dd249bf1.css.map": "/bee-beauty-react/static/css/main.dd249bf1.css.map",
+    "main.00d0d782.js.map": "/bee-beauty-react/static/js/main.00d0d782.js.map",
+    "787.dc8eee02.chunk.js.map": "/bee-beauty-react/static/js/787.dc8eee02.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4672d6f6.css",
-    "static/js/main.093f8d8c.js"
+    "static/css/main.dd249bf1.css",
+    "static/js/main.00d0d782.js"
   ]
 }
